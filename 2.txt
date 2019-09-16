@@ -1,0 +1,26 @@
+1. 下面代码的输出结果:
+
+@interface Son : Father
+
+@end
+
+@implementation Son
+
+-(instancetype)init {
+    self = [super init];
+    if (self != nil) {
+        NSLog(@"class1: %@", [self class]);
+        NSLog(@"class2: %@", [super class]);
+    }
+    return self;
+}
+
+@end
+
+2. instancetype和id的异同
+3. 调试iOS bug的方法
+4. 测试iOS app性能的方法
+5. OC怎么调用JS, JS怎么调用OC
+6. OS播放音频的方法
+7. AVAudioPlayer属于哪个库，播放音频的步骤
+8. isKindOfClass和isMemberOfClass的区别

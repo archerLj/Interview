@@ -1,0 +1,55 @@
+1. 字符串反转，比如"hello world"变成"world hello".  --- c语言实现
+2. 两个数字a=19,b=29，不借助临时变量，进行交换
+a = a ^ b
+b = a ^ b
+a = a ^ b
+
+3. 下面程序的输出值:
+
+typedef void(^Boring)(void);
+
+    int a = 23;
+    __block int b = 23;
+    
+    Boring block1 = ^{ NSLog(@"a1 == %d", a); };
+    Boring block2 = ^{ NSLog(@"b1 == %d", b); };
+    
+    a = 32;
+    b = 32;
+    
+    Boring block3 = ^{ NSLog(@"a2 == %d", a); };
+    Boring block4 = ^{ NSLog(@"b2 == %d", b); };
+    
+    block1();
+    block2();
+    block3();
+    block4();
+
+4. 以下说法对不对?
+1. ARC中能不能用autorelease以及NSZone;  
+2.releasepool在drain的时候会清空里面的所有对象
+
+5. 下面代码中abc的访问效率从高到低是？
+int a=10
+int main() {
+    int b=20;
+    int *c = NULL;
+    c = .....
+}
+
+6. 下题的输出结果:
+int main()
+{
+    int a[5] = {1,2,3,4,5};
+    int *ptr = (int*)(&a+1);
+    printf("%d,%d", *(a+1), *(ptr-1));
+
+    return 0;
+}
+
+&a表示的是整个数组，&a + 1则表示数组a，这里强制转换成(int *)，则(&a + 1)变为4个字节，即5后面的四个字节；
+*(ptr - 1)是5
+*(a + 1)这里的a是数组的地址，也是首元素地址， *(a + 1)表示数组的第二个元素2
+
+7. 说说消息转发；给空对象发送消息后果；说说KVO原理；FMDB的封装; 用过哪些数据库？
+8. assign, weak等属性修饰关键字解释下他们的区别
